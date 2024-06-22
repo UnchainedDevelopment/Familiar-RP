@@ -1,0 +1,7 @@
+secrets.cfg
+server.cfg
+/server/
+/txData/
+data/cache/
+start_7290_default.bat
+server.cfg.bkp
