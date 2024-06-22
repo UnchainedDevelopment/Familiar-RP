@@ -2,6 +2,7 @@ secrets.cfg
 server.cfg
 /server/
 /txData/
-data/cache/
+Familiar RP/cache/
 start_7290_default.bat
 server.cfg.bkp
+cache/files/bob74_ipl/resource.rpf
