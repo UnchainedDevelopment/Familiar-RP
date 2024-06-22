@@ -92,7 +92,7 @@ function ESX.Table.Reverse(t)
 end
 
 function ESX.Table.Clone(t)
-    if type(t) ~= "table" then
+    if type(t) ~= 'table' then
         return t
     end
 
@@ -100,7 +100,7 @@ function ESX.Table.Clone(t)
     local target = {}
 
     for k, v in pairs(t) do
-        if type(v) == "table" then
+        if type(v) == 'table' then
             target[k] = ESX.Table.Clone(v)
         else
             target[k] = v
@@ -123,11 +123,11 @@ function ESX.Table.Concat(t1, t2)
 end
 
 function ESX.Table.Join(t, sep)
-    local str = ""
+    local str = ''
 
     for i = 1, #t, 1 do
         if i > 1 then
-            str = str .. (sep or ",")
+            str = str .. (sep or ',')
         end
 
         str = str .. t[i]
@@ -138,7 +138,7 @@ end
 
 -- Credits: https://github.com/JonasDev99/qb-garages/blob/b0335d67cb72a6b9ac60f62a87fb3946f5c2f33d/server/main.lua#L5
 function ESX.Table.TableContains(tab, val)
-    if type(val) == "table" then
+    if type(val) == 'table' then
         for _, value in pairs(tab) do
             if ESX.Table.TableContains(val, value) then
                 return true

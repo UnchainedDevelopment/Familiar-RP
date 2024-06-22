@@ -1,5 +1,5 @@
-AddEventHandler("gameEventTriggered", function(event, data)
-    if event ~= "CEventNetworkEntityDamage" then
+AddEventHandler('gameEventTriggered', function(event, data)
+    if event ~= 'CEventNetworkEntityDamage' then
         return
     end
     local victim, victimDied = data[1], data[4]
@@ -36,8 +36,8 @@ function PlayerKilledByPlayer(killerServerId, killerClientId, deathCause)
         killerClientId = killerClientId,
     }
 
-    TriggerEvent("esx:onPlayerDeath", data)
-    TriggerServerEvent("esx:onPlayerDeath", data)
+    TriggerEvent('esx:onPlayerDeath', data)
+    TriggerServerEvent('esx:onPlayerDeath', data)
 end
 
 function PlayerKilled(deathCause)
@@ -51,6 +51,6 @@ function PlayerKilled(deathCause)
         deathCause = deathCause,
     }
 
-    TriggerEvent("esx:onPlayerDeath", data)
-    TriggerServerEvent("esx:onPlayerDeath", data)
+    TriggerEvent('esx:onPlayerDeath', data)
+    TriggerServerEvent('esx:onPlayerDeath', data)
 end

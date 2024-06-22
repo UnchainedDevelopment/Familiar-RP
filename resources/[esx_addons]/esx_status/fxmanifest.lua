@@ -2,7 +2,7 @@ fx_version 'adamant'
 
 game 'gta5'
 
-description 'Handles the overall status system for Hunger, Thrist and others'
+description 'ESX Status'
 
 version '1.0'
 legacyversion '1.9.1'
@@ -21,14 +21,6 @@ client_scripts {
 	'config.lua',
 	'client/classes/status.lua',
 	'client/main.lua'
-}
-
-ui_page 'html/ui.html'
-
-files {
-	'html/ui.html',
-	'html/css/app.css',
-	'html/scripts/app.js'
 }
 
 dependency 'es_extended'

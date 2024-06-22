@@ -1,3 +1,34 @@
+local PlayerData = {}
+
+RefreshVMSHUD = function()
+	if not Config.UseVMSHud then return end
+	if ESX.PlayerData.job.grade_name == 'boss' then
+		exports['vms_hud']:CreateCompanyMoneyHUD()
+		ESX.TriggerServerCallback('esx_society:getSocietyMoney', function(money)
+			exports['vms_hud']:UpdateCompanyMoney(money)
+		end, ESX.PlayerData.job.name)
+	else
+		exports['vms_hud']:RemoveCompanyMoneyHUD()
+	end
+end
+
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(job)
+	PlayerData.job = job
+	RefreshVMSHUD()
+end)
+
+RegisterNetEvent('esx:playerLoaded')
+AddEventHandler('esx:playerLoaded', function(xPlayer)
+	PlayerData = xPlayer
+	ESX.PlayerLoaded = true
+	RefreshVMSHUD()
+end)
+
+if ESX.PlayerLoaded then 
+	RefreshVMSHUD()
+end
+
 function OpenBossMenu(society, close, options)
 	options = options or {}
 	local elements = {

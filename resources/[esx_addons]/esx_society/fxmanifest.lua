@@ -2,7 +2,7 @@ fx_version 'adamant'
 
 game 'gta5'
 
-description 'Provides a way for Jobs to have a society system. (boss menu, salaries, funding etc)'
+description 'ESX Society'
 lua54 'yes'
 version '1.0'
 
